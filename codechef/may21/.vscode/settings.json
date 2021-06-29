@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.py": "python",
+        "bitset": "c",
+        "chrono": "c",
+        "algorithm": "c"
+    }
+}

@@ -1,0 +1,9 @@
+package treeDS;
+
+public class Tries_Array {
+
+	public Tries_Array() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

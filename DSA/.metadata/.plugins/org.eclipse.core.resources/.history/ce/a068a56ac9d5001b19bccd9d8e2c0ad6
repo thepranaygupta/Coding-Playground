@@ -1,0 +1,9 @@
+package treeDS;
+
+public class Trie_hash {
+
+	public Trie_hash() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,16 @@
+{
+    "files.associations": {
+        "*.py": "python",
+        "stdlib.h": "c",
+        "stdio.h": "c",
+        "math.h": "c",
+        "cmath": "c",
+        "ratio": "c",
+        "bitset": "c",
+        "chrono": "c",
+        "xhash": "c",
+        "xtree": "c",
+        "xutility": "c"
+    },
+    "C_Cpp.errorSquiggles": "Enabled"
+}

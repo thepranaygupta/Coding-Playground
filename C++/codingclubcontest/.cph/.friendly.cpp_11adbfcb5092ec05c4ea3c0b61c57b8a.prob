@@ -1,0 +1,1 @@
+{"name":"Local: friendly","url":"e:\\Coding Playground\\C++\\codingclubcontest\\friendly.cpp","tests":[{"id":1622959928272,"input":"abab","output":"2"},{"id":1622959936870,"input":"nitin","output":"2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Coding Playground\\C++\\codingclubcontest\\friendly.cpp","group":"local","local":true}

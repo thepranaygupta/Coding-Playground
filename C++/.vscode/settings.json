@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "*.py": "python",
+        "ostream": "cpp",
+        "iostream": "cpp",
+        "vector": "cpp",
+        "algorithm": "cpp",
+        "initializer_list": "cpp",
+        "xstring": "cpp",
+        "xutility": "cpp",
+        "utility": "cpp"
+    }
+}

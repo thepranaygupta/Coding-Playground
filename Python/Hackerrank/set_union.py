@@ -1,0 +1,5 @@
+ne=int(input())
+e=set(input().split())
+nf=int(input())
+f=set(input().split())
+print(len(e.union(f)))

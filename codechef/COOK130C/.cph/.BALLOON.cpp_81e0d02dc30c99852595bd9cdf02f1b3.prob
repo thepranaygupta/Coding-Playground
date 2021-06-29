@@ -1,0 +1,1 @@
+{"name":"Local: BALLOON","url":"e:\\Coding Playground\\codechef\\COOK130C\\BALLOON.cpp","tests":[{"id":1624207958301,"input":"3\n7\n1 2 3 4 5 7 6\n8\n8 7 6 5 4 3 2 1\n9\n7 4 3 5 6 1 8 2 9","output":"7\n8\n8"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Coding Playground\\codechef\\COOK130C\\BALLOON.cpp","group":"local","local":true}
