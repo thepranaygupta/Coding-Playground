@@ -5,9 +5,5 @@
 
 int main()
 {
-    char x = 'A';
-    char *p;
-    p = &x;
-    printf("%u %c", p, *p);
-    return 0;
+    
 }
