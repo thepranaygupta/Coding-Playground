@@ -10,7 +10,8 @@
         "chrono": "c",
         "xhash": "c",
         "xtree": "c",
-        "xutility": "c"
+        "xutility": "c",
+        "string.h": "c"
     },
     "C_Cpp.errorSquiggles": "Enabled"
 }
