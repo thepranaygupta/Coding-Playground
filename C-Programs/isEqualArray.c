@@ -1,10 +1,11 @@
 #include <stdio.h>
-void sort(int *arr[], int n)
+void sort(int arr[], int n)
 {
     int i, j, temp;
+    // printf("\nHAHA2");
     for (i = 0; i < n - 1; i++)
     {
-        for (j = 0; i < n - i - 1; j++)
+        for (j = i + 1; j < n; j++)
         {
             if (arr[j] > arr[j + 1])
             {
@@ -17,21 +18,24 @@ void sort(int *arr[], int n)
 }
 void isEqual(int arr1[], int arr2[], int m, int p)
 {
-    if(m!=p)
-        printf("Array are not same.\n");
-    sort(&arr1, m);
-    sort(&arr2, p);
     int i;
-
-    for (i = 0; i < m; i++)
+    if (m != p)
     {
-        if (arr1[i] != arr2[i])
+        printf("\nArray are not same.\n");
+        return;
+    }
+    else
+    {
+        for (i = 0; i < m; i++)
         {
-            printf("Array are not same.\n");
-            break;
+            if (arr1[i] != arr2[i])
+            {
+                printf("\nArray are not same.\n");
+                return;
+            }
         }
     }
-    printf("Array are the same.\n");
+    printf("\nArray are the same.\n");
 }
 void main()
 {
@@ -48,6 +52,17 @@ void main()
     for (i = 0; i < b; i++)
     {
         scanf("%d", &a2[i]);
+    }
+
+    sort(a1, a);
+    for (i = 0; i < a; i++)
+    {
+        printf("%d ", a1[i]);
+    }
+    sort(a2, b);
+    for (i = 0; i < b; i++)
+    {
+        printf("%d ", a2[i]);
     }
     isEqual(a1, a2, a, b);
     // if (isEqual(a1, a2, a, b))
