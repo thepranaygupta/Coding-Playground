@@ -1,5 +1,5 @@
 #include <stdio.h>
-int sort(int arr[], int n)
+void sort(int *arr[], int n)
 {
     int i, j, temp;
     for (i = 0; i < n - 1; i++)
@@ -15,19 +15,23 @@ int sort(int arr[], int n)
         }
     }
 }
-int isEqual(int arr1[], int arr2[], int m, int p)
+void isEqual(int arr1[], int arr2[], int m, int p)
 {
-    sort(arr1, m);
-    sort(arr2, p);
+    if(m!=p)
+        printf("Array are not same.\n");
+    sort(&arr1, m);
+    sort(&arr2, p);
     int i;
+
     for (i = 0; i < m; i++)
     {
         if (arr1[i] != arr2[i])
         {
-            return 0;
+            printf("Array are not same.\n");
+            break;
         }
     }
-    return 1;
+    printf("Array are the same.\n");
 }
 void main()
 {
@@ -45,9 +49,9 @@ void main()
     {
         scanf("%d", &a2[i]);
     }
-    // res = isEqual(a1, a2, a, b);
-    if (isEqual(a1, a2, a, b))
-        printf("Array are not same.\n");
-    else
-        printf("Array are equal.\n");
+    isEqual(a1, a2, a, b);
+    // if (isEqual(a1, a2, a, b))
+    //     printf("Array are not same.\n");
+    // else
+    //     printf("Array are equal.\n");
 }
