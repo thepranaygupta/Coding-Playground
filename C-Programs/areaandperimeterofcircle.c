@@ -13,7 +13,7 @@
 //     printf("Enter the Radius: ");
 //     scanf("%lf", &r);
 //     areaperi(&r, &area, &peri);
-//     printf("Radius = %lf", r);
+//     printf("\nRadius = %lf", r);
 //     printf("\nArea = %lf", area);
 //     printf("\nPerimeter = %lf", peri);
 //     return 0;
@@ -33,7 +33,7 @@ int main()
     double r;
     printf("Enter the Radius: ");
     scanf("%lf", &r);
-    printf("Radius = %lf", r);
+    printf("\nRadius = %lf", r);
     printf("\nArea = %lf", area(r));
     printf("\nPerimeter = %lf", perimeter(r));
 }
