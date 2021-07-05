@@ -1,17 +1,13 @@
 //03_PRANAY GUPTA
 #include <stdio.h>
-//#include <string.h>
-//#include <math.h>
 int main()
 {
-    int a[20], b[20];
-    int n, m, i;
-    printf("Enter the size of First Array: ");
+    int i, j, m, n, a[20], b[20], c[30], temp;
+    printf("Input the size of first array: ");
     scanf("%d", &m);
-    printf("Enter the size of Second Array: ");
+    printf("Input the size of second array: ");
     scanf("%d", &n);
-
-    printf("\nInput Elements in the First Array: ");
+    printf("\nInput Elements in the first Array: ");
     for (i = 0; i < m; i++)
     {
         scanf("%d", &a[i]);
@@ -21,23 +17,29 @@ int main()
     {
         scanf("%d", &b[i]);
     }
-    int actr = 0, bctr = 0;
-    int c[n + m];
-    for (i = 0; i < m + n;)
+
+    int k = 0;
+    for (i = 0; i < m; i++)
     {
-        if (a[actr] <= b[bctr])
-        {
-            c[i++] = a[actr++];
-        }
-        else
-        {
-            c[i++] = b[bctr++];
-        }
+        c[k++] = a[i];
     }
-    printf("\nSorted Array is: ");
-    for (i = 0; i < m + n; i++)
+    for (i = 0; i < n; i++)
     {
-        printf("%d ", c[i]);
+        c[k++] = b[i];
     }
-    return 0;
+    printf("The Array after Merging is:\n");
+    for (i = 0; i < k; i++)
+    {
+        for (j = i + 1; j < k; j++)
+        {
+            if (c[i] > c[j])
+            {
+                temp = c[i];
+                c[i] = c[j];
+                c[j] = temp;
+            }
+        }
+        printf(" %d ", c[i]);
+    }
+
 }
