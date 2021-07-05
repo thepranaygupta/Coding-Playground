@@ -1,9 +1,24 @@
+//03_PRANAY GUPTA
 #include <stdio.h>
-// #include <string.h>
-// #include <math.h>
-
 int main()
 {
-    printf("%d, %d, %d", sizeof(3.0f), sizeof('3'), sizeof(3.0));
-    return 0;
+    int arr[100], n, pos, i;
+    printf("Input the size of array: ");
+    scanf("%d", &n);
+    for (i = 0; i < n; i++)
+    {
+        printf("Element-%d: ", i);
+        scanf("%d", &arr[i]);
+    }
+    printf("Enter the position for deleting the element: ");
+    scanf("%d", &pos);
+    for (i = pos - 1; i <= n - 2; i++)
+    {
+        arr[i] = arr[i + 1];
+    }
+    printf("The New Array is: ");
+    for (i = 0; i < n - 1; i++)
+    {
+        printf("%d  ", arr[i]);
+    }
 }
