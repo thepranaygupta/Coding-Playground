@@ -5,8 +5,6 @@ int main()
 {
     int x;
     vector<int> arr;
-    // arr.push_back(3);
-    // arr.push_back(71);
     for (int i = 0;; i++)
     {
         cin >> x;
@@ -14,6 +12,8 @@ int main()
         if (arr[i] == 0)
             break;
     }
+    arr.push_back(3);
+    arr.push_back(71);
     sort(arr.begin(), arr.end());
     arr.erase(unique(arr.begin(), arr.end()), arr.end());
     printf("\nThese students have submitted the classwork(%d): ", arr.size() - 1);
