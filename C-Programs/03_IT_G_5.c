@@ -43,7 +43,7 @@ int main()
         printf("= %d", rsum[i]);
         printf("\n");
     }
-    printf("----\n");
+    printf("-----\n");
     for (int i = 0; i < n; i++)
     {
         printf("%d ", csum[i]);
