@@ -14,9 +14,7 @@ void makeDiagonalZero(int n, int m[][n])
                 m[i][j] = 0;
             if (i == j)
                 m[i][j] = 0;
-            printf("%d ", m[i][j]);
         }
-        printf("\n");
     }
 }
 
@@ -39,7 +37,6 @@ int main()
         printf("\n");
     }
 
-    printf("\nModified Matrix:\n");
     makeDiagonalZero(n, mat);
 
     printf("\nModified Matrix:\n");
