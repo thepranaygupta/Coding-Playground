@@ -13,14 +13,14 @@
 package linkedlist;
 
 public class RemoveDuplicates {
-    public ListNode deleteDuplicates(ListNode A) {
-        ListNode curr=A;
-        while(curr.next!=null && curr!=null) {
-            if(curr.val==curr.next.val)
-                curr.next=curr.next.next;
-            else
-                curr=curr.next;
-        }
-        return A;
-    }
+	public ListNode deleteDuplicates(ListNode A) {
+		ListNode curr = A;
+		while (curr.next != null && curr != null) {
+			if (curr.val == curr.next.val)
+				curr.next = curr.next.next;
+			else
+				curr = curr.next;
+		}
+		return A;
+	}
 }

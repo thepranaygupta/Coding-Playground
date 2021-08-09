@@ -34,7 +34,8 @@ class Trie_Ar {
 	class Node {
 		char data;
 		Node next[];
-		int count; // this will keep the count for the no. of words formed using particular character
+		int count; // this will keep the count for the no. of words formed using particular
+					// character
 		boolean isEnd;
 
 		public Node(char data) {
@@ -59,7 +60,7 @@ class Trie_Ar {
 			curr.next[c - 'a'].count++;
 			curr = curr.next[c - 'a'];
 		}
-		curr.isEnd = true; //this marks the end of the word, so now the word exists in the trie
+		curr.isEnd = true; // this marks the end of the word, so now the word exists in the trie
 	}
 
 	public boolean search(String word) {
@@ -90,10 +91,11 @@ class Trie_Ar {
 			for (char c : word.toCharArray()) {
 				curr = curr.next[c - 'a'];
 			}
-			curr.isEnd = false; //this unmarks the end of word, so now the entire word is non-existent in the trie
+			curr.isEnd = false; // this unmarks the end of word, so now the entire word is non-existent in the
+								// trie
 			System.out.println("Deleted");
 		}
-		
+
 		else {
 			System.out.println("Word not fount");
 			return;

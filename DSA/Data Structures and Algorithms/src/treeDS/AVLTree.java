@@ -193,7 +193,7 @@ class AVL_T {
 		else
 			return node.data;
 	}
-	
+
 	public Node delete(Node r, int val) {
 		if (r == null)
 			return null;
@@ -201,22 +201,22 @@ class AVL_T {
 			r.left = delete(r.left, val);
 		} else if (val > r.data) {
 			r.right = delete(r.right, val);
-		} 
+		}
 		// when the node to be deleted is found
 		else {
 			if (r.left != null && r.right != null) {
 				int lmax = maxLeft(r.left);
 				r.data = lmax;
 				r.left = delete(r.left, lmax);
-			} 
+			}
 			// if the node has only a left child
 			else if (r.left != null) {
 				return r.left;
-			} 
+			}
 			// if the node has only a right child
 			else if (r.right != null) {
 				return r.right;
-			} 
+			}
 			// if the node has no child i.e., it is a leaf node
 			else {
 				return null;
@@ -224,50 +224,34 @@ class AVL_T {
 		}
 
 		int bf = getBalancedFac(r);
-		
+
 		// if bf is 2, it means that the deletion will happen in the right subtree
 		// this will result in L-L-Imbalance or L-R-Imbalance
 		/*
-		  => bf(r.left)=1 means remaining structure in this is:-
-		 		30 bf=2
-		 	   /
-		 	  20   bf=1
-		 	 /
-		 	10     bf=0
-		
-		 => bf(r.left)=0 means remaining structure in this is:-
-		 	   30 bf=2
-		 	  /
-		 	 20   bf=0
-		 	/  \
-		   10  25   bf=0 for both
-	  */
+		 * => bf(r.left)=1 means remaining structure in this is:- 30 bf=2 / 20 bf=1 / 10
+		 * bf=0
+		 * 
+		 * => bf(r.left)=0 means remaining structure in this is:- 30 bf=2 / 20 bf=0 / \
+		 * 10 25 bf=0 for both
+		 */
 		if (bf == 2 && getBalancedFac(r.left) >= 0)
 			return rightRotate(r);
 		else if (bf == 2 && getBalancedFac(r.left) == -1) {
 			r.left = leftRotate(r.left);
 			return rightRotate(r);
 		}
-		
+
 		// if bf is -2, it means that the deletion will happen in the left subtree
 		// this will result in R-R-Imbalance or R-L-Imbalance
 		/*
-		   => bf(r.right)=-1 means remaining structure in this is:-
-		 		10 bf=-2
-		 		  \
-		 		  20 bf=-1
-		 		    \
-		 		    30 bf=0
-		 
-		
-		
-		  => bf(r.right)=0 means remaining structure in this is:-
-		 	   10  bf=-2
-		 		 \
-		 		 20 bf=0
-		 		/  \
-		 	  15    30 bf=0 for both
-	  */
+		 * => bf(r.right)=-1 means remaining structure in this is:- 10 bf=-2 \ 20 bf=-1
+		 * \ 30 bf=0
+		 * 
+		 * 
+		 * 
+		 * => bf(r.right)=0 means remaining structure in this is:- 10 bf=-2 \ 20 bf=0 /
+		 * \ 15 30 bf=0 for both
+		 */
 		else if (bf == -2 && getBalancedFac(r.right) <= 0)
 			return leftRotate(r);
 		else if (bf == -2 && getBalancedFac(r.right) == 1) {

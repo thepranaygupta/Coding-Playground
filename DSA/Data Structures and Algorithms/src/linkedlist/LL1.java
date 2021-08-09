@@ -33,11 +33,11 @@ class Node {
 	}
 }
 
-class LinkedList {
+class LinkedList1 {
 	private Node start;
 	private int size;
 
-	public LinkedList() {
+	public LinkedList1() {
 		start = null;
 		size = 0;
 	}
@@ -183,14 +183,14 @@ class LinkedList {
 public class LL1 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		LinkedList list = new LinkedList();
+		LinkedList1 list = new LinkedList1();
 		boolean flag = true;
 		while (flag) {
 			System.out.println("\n1. Add item to the list at start");
 			System.out.println("2. Add item to the list at last");
 			System.out.println("3. Add item to the list at position");
 			System.out.println("4. Delete First Item from the List");
-			System.out.println("5. Delete Last Item from the List")s;
+			System.out.println("5. Delete Last Item from the List");
 			System.out.println("6. Delete Item at Given Position from the List");
 			System.out.println("7. Update Item at Given Position");
 			System.out.println("8. Reverse Linked List");

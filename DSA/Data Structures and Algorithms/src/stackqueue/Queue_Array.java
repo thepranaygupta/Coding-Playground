@@ -90,11 +90,9 @@ class Queue {
 		if (isFull()) {
 			System.out.println("Queue  is Full");
 			return;
-		}
-		else if (front == -1) {
+		} else if (front == -1) {
 			front = rear = 0;
-		}
-		else {
+		} else {
 			rear++;
 		}
 		arr[rear] = val;
