@@ -1,32 +1,61 @@
 package misc;
 
-//initial arguments will be: (arr, exponent(1, 10, 100, 1000....)
-static void radixSort(int[] arr, int exp) {
-	int[] farr = new int[10];
+/**
+ * // This is MountainArray's API interface. // You should not implement it, or
+ * speculate about its implementation interface MountainArray { public int
+ * get(int index) {} public int length() {} }
+ */
 
-	// store frequency of each element in farr[] according to their indices
-	for (int i = 0; i < arr.length; i++) {
-		farr[arr[i] / exp % 10]++;
+class Solution {
+	public int findInMountainArray(int target, MountainArray A) {
+
+		int peak = peakOfMountainArray(A);
+		int firstTry = orderAgnosticBinarySearch(A, target, 0, peak);
+		if (firstTry != -1) {
+			return firstTry;
+		}
+		return orderAgnosticBinarySearch(A, target, peak + 1, A.length() - 1);
 	}
 
-	// assign indices of sorted array to all the corresponding elements
-	// this is important to maintain relative sort among elements with the same value
-	for (int i = 0; i < farr.length; i++) {
-		if (i == 0)
-			farr[i] = farr[i] - 1;
-		else
-			farr[i] = farr[i] + farr[i - 1];
+	int peakOfMountainArray(MountainArray A) {
+		int start = 0;
+		int end = A.length() - 1;
+		while (start < end) {
+			int mid = start + (end - start) / 2;
+
+			if (A.get(mid) > A.get(mid + 1)) {
+				end = mid;
+			} else {
+				start = mid + 1;
+			}
+		}
+		return start;
 	}
 
-	// create a temporary array to store the sorted array
-	int[] ans = new int[arr.length];
-	for (int i = arr.length - 1; i >= 0; i--) {
-		int index = farr[arr[i] / exp % 10];
-		ans[index] = arr[i];
-		farr[arr[i] / exp % 10]--;
-	}
+	int orderAgnosticBinarySearch(MountainArray A, int target, int start, int end) {
+		boolean isAsc = A.get(start) < A.get(end);
 
-	// copy the sorted array to original array
-	for (int i = 0; i < arr.length; i++)
-		arr[i] = ans[i];
+		while (start <= end) {
+
+			int mid = start + (end - start) / 2;
+			if (A.get(mid) == target) {
+				return mid;
+			}
+
+			if (isAsc) {
+				if (A.get(mid) > target) {
+					end = mid - 1;
+				} else {
+					start = mid + 1;
+				}
+			} else {
+				if (A.get(mid) < target) {
+					end = mid - 1;
+				} else {
+					start = mid + 1;
+				}
+			}
+		}
+		return -1;
+	}
 }
