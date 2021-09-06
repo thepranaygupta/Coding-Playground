@@ -1,61 +1,15 @@
-package misc;
-
-/**
- * // This is MountainArray's API interface. // You should not implement it, or
- * speculate about its implementation interface MountainArray { public int
- * get(int index) {} public int length() {} }
- */
-
-class Solution {
-	public int findInMountainArray(int target, MountainArray A) {
-
-		int peak = peakOfMountainArray(A);
-		int firstTry = orderAgnosticBinarySearch(A, target, 0, peak);
-		if (firstTry != -1) {
-			return firstTry;
-		}
-		return orderAgnosticBinarySearch(A, target, peak + 1, A.length() - 1);
-	}
-
-	int peakOfMountainArray(MountainArray A) {
-		int start = 0;
-		int end = A.length() - 1;
-		while (start < end) {
-			int mid = start + (end - start) / 2;
-
-			if (A.get(mid) > A.get(mid + 1)) {
-				end = mid;
-			} else {
-				start = mid + 1;
-			}
-		}
-		return start;
-	}
-
-	int orderAgnosticBinarySearch(MountainArray A, int target, int start, int end) {
-		boolean isAsc = A.get(start) < A.get(end);
-
-		while (start <= end) {
-
-			int mid = start + (end - start) / 2;
-			if (A.get(mid) == target) {
-				return mid;
-			}
-
-			if (isAsc) {
-				if (A.get(mid) > target) {
-					end = mid - 1;
-				} else {
-					start = mid + 1;
-				}
-			} else {
-				if (A.get(mid) < target) {
-					end = mid - 1;
-				} else {
-					start = mid + 1;
-				}
-			}
-		}
-		return -1;
-	}
+static int countRotations(int arr[], int low, int high) {
+	if (high < low)
+		return 0;
+	if (high == low)
+		return low;
+	int mid = low + (high - low) / 2;
+	if (mid < high && arr[mid + 1] < arr[mid])
+		return (mid + 1);
+	if (mid > low && arr[mid] < arr[mid - 1])
+		return mid;
+	if (arr[high] > arr[mid])
+		return countRotations(arr, low, mid - 1);
+	return countRotations(arr, mid + 1, high);
 }
+
