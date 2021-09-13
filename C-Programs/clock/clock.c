@@ -4,7 +4,7 @@
 void main()
 {
     int hr, min, sec;
-    int c, i, d = 1;
+    int c, i, d = 1000;
     char day[10];
     printf("Enter the Day: ");
     gets(day);
@@ -67,7 +67,7 @@ void main()
         }
         printf("\n\nTIME IS- ");
         printf(" %02d : %02d : %02d", hr, min, sec);
-        sleep(d);
+        Sleep(d);
         system("cls");
         printf("\nDAY IS- ");
         for (i = c; i <= 7; i++)
