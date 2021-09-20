@@ -1,15 +1,15 @@
-static int countRotations(int arr[], int low, int high) {
-	if (high < low)
-		return 0;
-	if (high == low)
-		return low;
-	int mid = low + (high - low) / 2;
-	if (mid < high && arr[mid + 1] < arr[mid])
-		return (mid + 1);
-	if (mid > low && arr[mid] < arr[mid - 1])
-		return mid;
-	if (arr[high] > arr[mid])
-		return countRotations(arr, low, mid - 1);
-	return countRotations(arr, mid + 1, high);
-}
+package misc;
 
+import java.util.Arrays;
+
+// initial arguments: (arr, arr.length)
+static void sum(int[] arr, int n) {
+	if(n < 1)
+		return;
+	int temp[] = new int[n-1];
+	for(int i = 0; i < n-1; i++) {
+		temp[i] = arr[i] + arr[i + 1];
+	}
+	sum(temp, n - 1);
+	System.out.println(Arrays.toString(arr));
+}
