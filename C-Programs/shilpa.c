@@ -1,20 +1,27 @@
 #include <stdio.h>
-#include <ctype.h>
 int main()
 {
-    char ch;
-    printf("Enter the alphabate");
-    scanf("%c",&ch);
-    if(isupper(ch))
+    int arr[5], n = 5, i, temp, j;
+    for (i = 0; i < 5; i++)
     {
-        printf("%c is uppercase alphabate", ch);
+        printf("ENTER THE ELEMENT N0. %d: ", i + 1);
+        scanf("%d", &arr[i]);
     }
-    else if (islower(ch))
+    for (i = 1; i < n; i++)
     {
-        printf("%c is lowercase alphabate", ch);
+        temp = arr[i];
+        j = i - 1;
+        while (j >= 0 && arr[j] > temp)
+        {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+        arr[j + 1] = temp;
     }
-    else{
-        printf("this is not an alphabate");
+    printf("The sorted array is: ");
+    for (i = 0; i < n; i++)
+    {
+        printf("%d  ", arr[i]);
     }
     return 0;
 }

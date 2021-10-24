@@ -11,7 +11,11 @@
         "xhash": "c",
         "xtree": "c",
         "xutility": "c",
-        "string.h": "c"
+        "string.h": "c",
+        "istream": "c",
+        "ostream": "c",
+        "xlocnum": "c",
+        "xstring": "c"
     },
     "C_Cpp.errorSquiggles": "Enabled"
 }
