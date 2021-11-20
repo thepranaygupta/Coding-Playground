@@ -3,8 +3,8 @@
 num = int(input("Enter a Number: "))
 flag = 1
 
-for i in range(2, int(num/2)):
-    if(num%i == 0):
+for i in range(2, num // 2):
+    if num % i == 0:
         flag = 0
 
 if flag == 1:
