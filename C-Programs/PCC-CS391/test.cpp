@@ -302,4 +302,4 @@ public:
 
         return 0;
     }
-}
+};
