@@ -1,4 +1,12 @@
 // 03_PRANAY GUPTA
+/*
+WAP in C to input a dynamic array and perform the following operations:
+    1 - Print all Prime Elements in the Array
+    2 - Sort the Array
+    3 - Display the Array
+    4 - Exit
+implement the functions in a menu driven program
+*/
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -62,7 +70,7 @@ int main()
 
     do
     {
-        printf("\n\n1 - Print all Prime Elements in the Array\n2- Sort the Array\n3 - Display the Array\n4 - Exit");
+        printf("\n\n1 - Print all Prime Elements in the Array\n2 - Sort the Array\n3 - Display the Array\n4 - Exit");
         printf("\nEnter your Choice: ");
         scanf("%d", &choice);
 
