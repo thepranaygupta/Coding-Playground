@@ -1,4 +1,4 @@
-# Write a program to input two list from user and from a dictionary using its elements as key and values
+# Write a program to input two list from user and form a dictionary using its elements as key and values
 
 keys = []
 values = []
