@@ -1,2 +1,2 @@
-n=16
-print(n)
+names = ['Amir', 'Bear', 'Charlton', 'Daman']
+print(names[-1][-1]) 
